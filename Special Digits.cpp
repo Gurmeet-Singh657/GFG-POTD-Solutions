@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define mod (int)(1e9+7)
+    #define mod (int)(1e9+7)
     int Fact[100001];
     int binExp(int n,int x)
     {
@@ -32,18 +32,35 @@ using namespace std;
         
         CreateFactorial();
         long long ans=0;
+        if(A==B) // When Both Numbers are same , only 1 arrangement is possible let's say A=2,B=2 So, 222222 only 1 arrangement
+            // so check whether sum contains any of C or D
+        {
+            int sum=N*A;
+            bool best=false;
+            while(sum>0)
+            {
+                int rem=sum%10;
+                if(rem==C || rem==D) 
+                {
+                    best=true;
+                    break;
+                }
+                sum/=10;
+            }
+            if(best) return 1;
+        }
         for(int i=0;i<=N;i++)
         {
             // i-> Number of A's
             // N-i -> Number of B's
             int sum=i*A+(N-i)*B;
-            bool best=true;
+            bool best=false;
             while(sum>0)
             {
                 int rem=sum%10;
-                if(rem!=C && rem!=D) 
+                if(rem==C || rem==D) // Also this condition is to check if atleast C or D is there , just break out get the answer
                 {
-                    best=false;
+                    best=true;
                     break;
                 }
                 sum/=10;
