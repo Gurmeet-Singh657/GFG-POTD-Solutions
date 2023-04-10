@@ -48,6 +48,7 @@ using namespace std;
                 sum/=10;
             }
             if(best) return 1;
+            return 0;
         }
         for(int i=0;i<=N;i++)
         {
