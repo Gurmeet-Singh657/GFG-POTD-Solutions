@@ -11,6 +11,7 @@
 //     vector<vector<int>> dp(n+1,vector<int>(r+1,-1));
 //     return f(n,r,dp);
 // }
+
 // Tabulation
 // #define mod (int)(1e9+7)
 // int nCr(int n, int r){
@@ -29,6 +30,7 @@
 //     }
 //     return dp[n][r];
 // }
+
 // Space Optimisation
 #define mod (int)(1e9 + 7)
 int nCr(int n, int r)
